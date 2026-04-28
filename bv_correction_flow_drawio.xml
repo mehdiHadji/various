@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2026-04-28T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="bv-correction-flow" name="BV Correction Flow">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="start" value="Début Job BV_CORRECTION\n(date_run / J-1)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="load" value="Chargement des données\n- BV existante\n- MAS\n- HUB + Vault\n- Table correction\n- Tracking" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="150" width="320" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="identify" value="Identifier corrections non traitées\n(BK + Hashdiff non présents dans tracking)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="310" width="360" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="partitions" value="Déduire partitions impactées\nDates à recalculer = J-1 + dates corrections" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="440" width="360" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="latest" value="Préparer corrections\nGarder latest record\npar (BK, date_valorisation)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="570" width="360" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="recalc" value="Recalcul BV ciblé\n- Filtrer MAS sur partitions\n- Jointures Vault\n- LEFT JOIN corrections\n- Application règle métier" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="700" width="400" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="write" value="Écriture BV\nOverwrite dynamique\npar partition date_valorisation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="860" width="340" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="tracking" value="Mise à jour tracking\n(BK, date_valo, Hashdiff, processed_at)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="990" width="360" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="end" value="Fin du job\nLogs + Monitoring" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1120" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="start" target="load">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="load" target="identify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="identify" target="partitions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="partitions" target="latest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="latest" target="recalc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="recalc" target="write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="write" target="tracking">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="tracking" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
