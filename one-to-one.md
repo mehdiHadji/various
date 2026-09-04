@@ -1,31 +1,25 @@
-# Ressenti de l'équipe
-- Sur la partie Patrimoine:
-  - j’ai l’impression qu’on a accumulé pas mal de dette technique au fil du temps:
-  - On retrouve beaucoup de duplication
-  - Plusieurs fichiers de conf qui rendent la compréhension difficile.
-  - et parfois des comportements qui ne sont pas forcément documentés.
-  - => Ce qui fait qu'une évolution simple peut demander bcp de temps juste pour comprendre l’existant
-- Sur la partie MOA - Patrimoine:
-  - Un autre point qui impacte bcp notre vélocité, c’est la stabilité des spécifications.
-  - Sur certains tickets Patrimoine, j’ai vu des changements fréquents après démarrage du développement.
-  - Il m’est arrivé d’avoir des tickets Jira modifiés plusieurs fois, ce qui génère forcément du rework et de la frustration.
+# Ressenti globale
+Globalement, ça se passe bien. Le fait d’intervenir sur Patrimoine et Safir (et un peu moins sur le Hub), me permet d’avoir une vision assez transverse.
 
-- Sur la partie Hub:
-  - Je connais moins le détail parce que je n’ai pas travaillé autant dessus, donc mon ressenti est forcément plus limité.
-  - Mais ce que je remarque, c’est qu’il y a une dynamique différente :
-    - l’équipe semble plus ouverte aux bonnes pratiques,
-    - à l’amélioration continue,
-    - aux nouveautés autour de Python, Spark...
-  - Je trouve intéressant de voir cette dynamique et je pense qu’il y a peut-être des choses qu’on pourrait partager entre les deux parties.
- 
-- Point d'attention:
-  - Un autre point d’attention que je trouve important concerne la capitalisation de la connaissance sur Patrimoine.
-  - Aujourd’hui, une partie importante de la connaissance fonctionnelle et technique repose sur quelques personnes, notamment des externes.
-  - Le problème n’est pas leur compétence, au contraire, mais le fait que cette connaissance n’est pas suffisamment transférée ni documentée.
-  - Si demain cette une personne quitte le projet ou change de mission, on risque de perdre des informations importantes
-  - => Je pense qu’il serait pertinent d’avoir un dev interne intégré à l’équipe Patrimoine. L’objectif serait d’avoir quelqu’un qui monte progressivement en compétence sur ce périmètre, qui puisse devenir un relais et éviter une dépendance trop forte envers les externes
+# Découpage équipe
+- Aujourd’hui, je suis encore beaucoup impliqué sur Patrimoine, même si le projet a maintenant son propre référent. 
+- L’idée pour moi serait progressivement d’intervenir sur Patrimoine / Hub surtout lorsqu’il y a un besoin de renfort ou un pic de charge,
+- et de prendre davantage de sujets Safir, puisque je suis maintenant référent sur ce périmètre.
+
+# Patrimoine
+Sur Patrimoine, je garde les mêmes constats concernant la maintenabilité, la documentation et le transfert de connaissance. 
+- Il y a aussi un point que je trouve important sur les specs : les relectures avec la MOA sont une très bonne pratique qu’il faut absolument garder. 
+- Ça permet de mieux comprendre le besoin avant de commencer le développement
+- et surtout d’éviter beaucoup d’allers-retours et de modifications en cours de route.
+
+# Safir
+- Sur Safir, comme tu le sais, on fait avec le contexte actuel.
+- C a beaucoup d’idées et peut parfois lancer plusieurs sujets ou pistes en parallèle.
+- Personnellement, ça ne me pose pas trop de problème parce que lorsque j’ai un doute, je reviens vers toi pour avoir un deuxième avis et m’assurer qu’on part dans la bonne direction.
+- sur la partie MOA:
+  - je pense qu’un peu plus d’accompagnement serait utile.
+  - Omar connaît les sujets, mais sur certains besoins ou arbitrages fonctionnels, je préférerais qu’il puisse avoir l’appui d’un MOA plus expérimenté.
+  - Ça sécuriserait davantage les specs et ça nous aiderait aussi côté développement à avoir des décisions fonctionnelles plus claires.
 
 # Attentes
-- J’aimerais continuer à avoir une vision transverse (comme aujourd'hui)
-- Je souhaiterais améliorer l’existant et aider l’équipe à monter en maturité.
-- J’aimerais avoir l’occasion de contribuer à la structuration technique.
+De mon côté, mon attente serait donc de continuer à avoir ce rôle transverse, avec progressivement davantage de responsabilité sur Safir/Hub, tout en restant disponible pour Patrimoine lorsqu’il y a besoin de renfort ou sur des sujets où mon expérience du périmètre peut être utile.
